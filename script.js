@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Кнопки с номерами страниц
         for (let i = 1; i <= totalPages; i++) {
             const pageBtn = document.createElement('button');
-            pageBtn.className = page-btn ${i === currentPage ? 'active' : ''};
+            pageBtn.className = "page-btn" + (i === currentPage ? " active" : "");
             pageBtn.innerText = i;
             pageBtn.onclick = () => { currentPage = i; render(); };
             paginationContainer.appendChild(pageBtn);
