@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотостудия - Наши Услуги</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Фотостудия "TSAR-Photo"</h1>
+        <nav>
+            <a href="index.html" class="active">Услуги</a>
+            <a href="detail.html">Детали (Портфолио)</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Каталог услуг</h2>
+
+        <section class="controls">
+            <input type="text" id="search-input" placeholder="Поиск услуги...">
+
+            <div class="sorting">
+                <button data-sort="price">По цене</button>
+                <button data-sort="title">По алфавиту</button>
+            </div>
+        </section>
+
+        <section class="services-list" id="services-container">
+            
+            <div class="service-card" data-price="5000" data-title="Индивидуальная фотосессия">
+                <div style="width:100%; height:200px; background:#34495e; display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem;">📸</div>
+                <h3>Индивидуальная фотосессия</h3>
+                <p>Часовая съемка в студии или на улице. 15 фото в ретуши.</p>
+                <span class="price">5000 ₽</span>
+            </div>
+
+            <div class="service-card" data-price="8000" data-title="Семейная фотосессия">
+                <div style="width:100%; height:200px; background:#2ecc71; display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem;">👨‍👩‍👧‍👦</div>
+                <h3>Семейная фотосессия</h3>
+                <p>Уютная съемка для всей семьи. До 4 человек, аренда студии включена.</p>
+                <span class="price">8000 ₽</span>
+            </div>
+
+            <div class="service-card" data-price="12000" data-title="Свадебная фотосессия">
+                <div style="width:100%; height:200px; background:#9b59b6; display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem;">💍</div>
+                <h3>Свадебная фотосессия</h3>
+                <p>Пакет "Стандарт": загс, прогулка, первые 2 часа банкета.</p>
+                <span class="price">12000 ₽</span>
+            </div>
+
+            <div class="service-card" data-price="4000" data-title="Репортажная съемка">
+                <div style="width:100%; height:200px; background:#f1c40f; display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem;">🎥</div>
+                <h3>Репортажная съемка</h3>
+                <p>Съемка мероприятий, дней рождения и корпоративов. Почасовая оплата.</p>
+                <span class="price">4000 ₽ / час</span>
+            </div>
+
+        </section>
+
+        <div class="pagination">
+            <button class="page-btn prev-btn" disabled>&laquo; Назад</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn next-btn">Вперед &raquo;</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Фотостудия TSAR-Photo. Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
