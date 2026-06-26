@@ -3,103 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Детали услуги - Индивидуальная фотосессия</title>
+    <title>Фотостудия - Детали услуги</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: #f4f6f9; color: #333; padding-bottom: 60px; }
-        
-        header { background: #1a252f; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        header h1 { font-size: 24px; }
-        header nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 600; }
-        header nav a.active { border-bottom: 3px solid #e74c3c; }
-
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #34495e; text-decoration: none; font-weight: bold; }
-
-        /* Блок товара/услуги */
-        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        
-        /* Галерея */
+        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; background: white; padding: 20px; border-radius: 8px; }
         .gallery-container { display: flex; flex-direction: column; gap: 15px; }
-        .main-img { height: 350px; background: #34495e; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 60px; color: white; }
+        
+        /* Стили для полноценных картинок */
+        .main-img-container { height: 350px; background: #f4f6f9; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid #eee; }
+        .main-img-container img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
+        
         .thumbnails { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-        .thumb { height: 80px; background: #7f8c8d; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; opacity: 0.7; transition: 0.3s; }
-        .thumb:hover { opacity: 1; border: 2px solid #e74c3c; }
-
-        /* Инфо */
-        .info-container h2 { font-size: 28px; color: #2c3e50; margin-bottom: 15px; }
+        .thumb { height: 80px; border-radius: 6px; cursor: pointer; object-fit: cover; opacity: 0.6; border: 2px solid transparent; transition: 0.3s; }
+        .thumb:hover, .thumb.active { opacity: 1; border: 2px solid #e74c3c; }
+        
+        .info-container h2 { font-size: 28px; margin-bottom: 15px; color: #2c3e50; }
         .price { font-size: 24px; color: #e74c3c; font-weight: bold; margin-bottom: 20px; }
         .description { line-height: 1.6; color: #555; margin-bottom: 25px; }
-        
         .specs { list-style: none; background: #f8f9fa; padding: 15px; border-radius: 8px; }
-        .specs li { padding: 8px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; font-size: 14px; }
-        .specs li:last-child { border: none; }
-        .specs strong { color: #2c3e50; }
-
-        /* Отзывы */
-        .reviews-section { margin-top: 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .specs li { padding: 8px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
+        
+        .reviews-section { margin-top: 40px; background: white; padding: 30px; border-radius: 8px; }
         .reviews-section h3 { margin-bottom: 20px; color: #2c3e50; }
         .review-card { border-left: 4px solid #34495e; padding-left: 15px; margin-bottom: 20px; }
-        .review-card h4 { font-size: 16px; color: #2c3e50; margin-bottom: 5px; }
-        .review-card p { font-size: 14px; color: #666; line-height: 1.4; }
+        .review-card h4 { font-size: 16px; margin-bottom: 5px; color: #2c3e50; }
+        .review-card p { font-size: 14px; color: #666; }
         .review-date { font-size: 12px; color: #999; margin-top: 5px; }
+        
+        .review-form { margin-top: 30px; border-top: 2px solid #f1f1f1; padding-top: 25px; }
+        .review-form h4 { margin-bottom: 15px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #ebdada; border-radius: 6px; outline: none; }
+        .form-group textarea { height: 100px; resize: vertical; }
+        .submit-btn { padding: 12px 25px; background: #34495e; color: white; border: none; font-weight: 600; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #1a252f; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #34495e; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>TSAR-Photo</h1>
+        <h1>Фотостудия "TSAR-Photo"</h1>
         <nav>
             <a href="index.html">Услуги</a>
-            <a href="detail.html" class="active">Портфолио</a>
+            <a href="detail.html" class="active">Детали (Портфолио)</a>
         </nav>
     </header>
 
-    <div class="container">
+    <main class="container" style="max-width: 1100px; margin: 30px auto; padding: 0 20px;">
         <a href="index.html" class="back-link">&larr; Вернуться к услугам</a>
-
         <div class="product-grid">
             <div class="gallery-container">
-                <div class="main-img" id="main-preview">📸</div>
-                <div class="thumbnails">
-                    <div class="thumb" data-img="📸">📷</div>
-                    <div class="thumb" data-img="👤">👤</div>
-                    <div class="thumb" data-img="✨">✨</div>
-                    <div class="thumb" data-img="🌆">🌆</div>
+                <div class="main-img-container">
+                    <img id="main-preview" src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800" alt="Главное фото">
+                </div>
+                <div class="thumbnails" id="thumbs-container">
+                    <img class="thumb active" src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=200" data-full="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800" alt="Миниатюра 1">
+                    <img class="thumb" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=200" data-full="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800" alt="Миниатюра 2">
+                    <img class="thumb" src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=200" data-full="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800" alt="Миниатюра 3">
+                    <img class="thumb" src="https://images.unsplash.com/photo-1452780212940-6f5c0d14d84a?w=200" data-full="https://images.unsplash.com/photo-1452780212940-6f5c0d14d84a?w=800" alt="Миниатюра 4">
                 </div>
             </div>
-<div class="info-container">
+
+            <div class="info-container">
                 <h2>Индивидуальная фотосессия</h2>
-                <div class="price">5 000 ₽</div>
+                <div class="price">5000 ₽</div>
                 <p class="description">
-                    Идеальный вариант для создания личного портфолио, контента в соцсети или просто красивых снимков на память. Съемка проходит в непринужденной атмосфере, помогаем с подбором студии, одежды и позированием в процессе.
+                    Часовая съемка в студии или на улице. Помогаем с позированием, подбором образов и локаций. В стоимость включена базовая цветокоррекция всех удачных кадров.
                 </p>
-                
                 <ul class="specs">
                     <li><span>Длительность:</span> <strong>1 час</strong></li>
-                    <li><span>Количество фото:</span> <strong>15 в ретуши + все исходники</strong></li>
-                    <li><span>Сроки готовности:</span> <strong>до 7 дней</strong></li>
-                    <li><span>Локация:</span> <strong>Студия или улица (на выбор)</strong></li>
+                    <li><span>Количество фото:</span> <strong>15 в ретуши</strong></li>
+                    <li><span>Сроки выполнения:</span> <strong>До 7 дней</strong></li>
                 </ul>
             </div>
         </div>
 
         <div class="reviews-section">
             <h3>Отзывы клиентов</h3>
-            
-            <div class="review-card">
-                <h4>Анна К.</h4>
-                <p>Потрясающая работа фотографа! Очень боялась камеры, но меня раскрепостили за 10 минут. Фотографии получились космическими, ретушь очень естественная.</p>
-                <div class="review-date">12.05.2026</div>
-            </div>
+            <div id="reviews-list"></div>
 
-            <div class="review-card">
-                <h4>Михаил Т.</h4>
-                <p>Все четко, вовремя и профессионально. Исходники отдали на следующий день, отретушированные — ровно через неделю. Рекомендую TSAR-Photo!</p>
-                <div class="review-date">28.04.2026</div>
-            </div>
+            <form class="review-form" id="comment-form">
+                <h4>Оставить отзыв</h4>
+                <div class="form-group">
+                    <input type="text" id="author-input" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="text-input" placeholder="Ваш отзыв..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
         </div>
-    </div>
+    </main>
 
+    <footer>
+        <p>&copy; 2026 Фотостудия TSAR-Photo. Все права защищены.</p>
+    </footer>
+
+    <script src="detail-script.js"></script>
 </body>
 </html>
